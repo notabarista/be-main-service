@@ -1,0 +1,44 @@
+server:
+  port: 8082
+  use-forward-headers-strategy: true  
+  
+spring:  
+  mvc:
+    log-request-details: true  
+  boot:
+    admin:
+      ui:
+        public-url: <url to gateway mapped to static resources e.g: http://localhost:18080/static/>
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+  endpoint:
+    logfile:
+      external_file: /var/log/${spring.application.name}.log
+      
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: <discovery service url e.g:http://localhost:8761/eureka/>
+    fetchRegistry: true
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: ${spring.application.name}:${random.int}  
+        
+logging.file: /var/log/${spring.application.name}.log              
+logging:
+  file: 
+    max-size: 10MB  
+    max-history: 2    
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+    file: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID}){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+  level:
+    root: warn 
