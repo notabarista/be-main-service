@@ -3,12 +3,14 @@ server:
   use-forward-headers-strategy: true  
   
 spring:  
+#  http:
+#    log-request-details: true 
   mvc:
     log-request-details: true  
   boot:
     admin:
       ui:
-        public-url: <url to gateway mapped to static resources e.g: http://localhost:18080/static/>
+        public-url: http://localhost:18080/static/
         
 management:
   endpoints:
@@ -25,7 +27,7 @@ eureka:
     enabled: true
     register-with-eureka: true
     serviceUrl:
-      defaultZone: <discovery service url e.g:http://localhost:8761/eureka/>
+      defaultZone: http://localhost:8761/eureka/
     fetchRegistry: true
     healthcheck:
       enabled: true
