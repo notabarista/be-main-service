@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Work\workspaces\workspace-notabarista\fe-notabarista\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! D:\workspaces\workspace-notabarista\fe-notabarista\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
