@@ -1,6 +1,1 @@
-dist: bionic
-jdk:
-  - openjdk11
-language: java
-before_install:
-  - chmod +x mvnw
+import: notabarista/pipeline_common:travis/backend/common.yml@master
