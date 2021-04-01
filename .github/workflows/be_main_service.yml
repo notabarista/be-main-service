@@ -5,18 +5,17 @@ on:
     branches:
       - main
 
-    jobs:
-      be_main_service_ubuntu_64:
+jobs:
+  be_main_service_ubuntu_64:
 
-          name: Build BE-Main-Service
-          runs-on: ubuntu-latest
+    name: Build BE-Main-Service
+    runs-on: ubuntu-latest
 
-          steps:
-            -name: Checkout BE-Main-Service
-            uses: notabarista/be-main-service
-            with:
-             java-version: '11.0.10'
-             architecture: x64
-
-             -name: Build with maven
-             run: mvn dependency:tree clean install
+    steps:
+      -name: Checkout BE-Main-Service
+      uses: notabarista/be-main-service
+      with:
+       java-version: '11.0.10'
+       architecture: x64
+       -name: Build with maven
+       run: mvn dependency:tree clean install
