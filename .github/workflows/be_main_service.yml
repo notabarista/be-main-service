@@ -1,17 +1,19 @@
 name: BE-Main-Service
 
-on: [pull-request]
+on: 
+  pull_request:
+    branches: main
 
-jobs:
-    build:
+    jobs:
+      build:
         runs-on: ubuntu-latest
 
         steps:
           -name: Checkout BE-Main-Service
-           uses: notabarista/be-main-service@main
-           with:
-              java-version: '11.0.10'
-              architecture: x64
+          uses: notabarista/be-main-service
+          with:
+           java-version: '11.0.10'
+           architecture: x64
 
-          -name: Build with maven
+           -name: Build with maven
            run: mvn --tree --clean --install
