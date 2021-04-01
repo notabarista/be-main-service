@@ -19,4 +19,4 @@ on:
              architecture: x64
 
              -name: Build with maven
-             run: mvn --tree --clean --install
+             run: mvn dependency:tree clean install
