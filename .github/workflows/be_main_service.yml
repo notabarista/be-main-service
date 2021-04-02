@@ -5,7 +5,8 @@ name: BE-Main-Service
 # Controls when the action will run. 
 on:
   pull_request:
-    branches: [ main ]
+    branches:
+      - '**'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,3 +28,8 @@ jobs:
          
       - name: Build with maven
         run: mvn dependency:tree clean install
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: staging
