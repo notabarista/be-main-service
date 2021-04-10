@@ -7,7 +7,7 @@ on:
   pull_request:
     types: [closed]
       branches:
-      - 'test_ci_automatic_merge_job'
+        - 'test_ci_automatic_merge_job'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
