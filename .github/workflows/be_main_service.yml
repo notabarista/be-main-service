@@ -5,8 +5,7 @@ name: BE-Main-Service
 # Controls when the action will run. 
 on:
   pull_request:
-    types:
-      - closed
+    types: [closed]
     branches:
         - 'test_ci_automatic_merge_job'
 
